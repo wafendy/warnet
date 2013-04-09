@@ -12,83 +12,94 @@ body {
   padding: 20px 0;
 }
 
-.stack {
-  padding: 20px;
+.box {
+  margin-top: 5px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden;
 }
 
-
-/**
- * Grid container
- */
-#tiles {
-list-style-type: none;
-position: relative; /** Needed to ensure items are laid out relative to this container **/
-margin: 0;
+.box li {
+    margin-left: 20px;
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
-/**
- * Grid items
- */
-#tiles li {
-width: 200px;
-background-color: #ffffff;
-border: 1px solid #dedede;
--moz-border-radius: 2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
-display: none; /** Hide items initially to avoid a flicker effect **/
-  cursor: pointer;
-padding: 4px;
+.longbox {
+  margin-top: 5px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden;
 }
 
-#tiles li img {
-display: block;
+.longbox li {
+    margin-left: 20px;
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
-/**
- * Grid item text
- */
-#tiles li p {
-color: #666;
-font-size: 12px;
-margin: 7px 0 0 7px;
+.smallbox {
+  margin-top: 5px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden;
 }
 
-/**
- * Some extra styles to randomize heights of grid items.
- */
-#tiles ali:nth-child(3n) {
-height: 175px;
+.smallbox li {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  position: relative;
+  float: left;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+    line-height: 23px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+    white-space: nowrap;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
-#tiles ali:nth-child(4n-3) {
-padding-bottom: 30px;
+.online {
+    color: #FFF;
+    background-color: #468847;
+  border: 1px solid #468847;
 }
 
-#tiles ali:nth-child(5n) {
-height: 250px;
+.offline {
+    color: #FFF;
+    background-color: #BBB;
+  border: 1px solid #999;
 }
 
-/** General page styling **/
-
-html {
-background-color: #e9e9e9;
+.bonus {
+  color: #D61E1E;
+  font-weight: bold;
 }
 
-#main {
-padding: 30px 0 30px 0;
-}
-
-header h1 {
-text-align: center;
-font-size: 24px;
-font-weight: normal;
-margin: 30px 0 3px 0;
-}
-
-header p {
-text-align: center;
-font-size: 13px;
-color: #777;
-margin: 0;
+.culprit {
+  color: #12B31F;
+  font-weight: bold;
 }
