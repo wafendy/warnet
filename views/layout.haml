@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %title Warnet Ducati Game Center
+    %link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    %link(rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css")
+
+    %link(rel="stylesheet" href="/css/styles.css")
+  %body
+
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %button{:type => 'button', :class => 'btn btn-navbar', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a{:class => 'brand', :href => '/'}
+            Warnet Aaw
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{:href => '/'}
+                  Home
+              %li
+                %a{:href => '/about'}
+                  About
+
+
+
+    .container
+      =yield
+
+    .footer.text-center
+      %p.muted.credit
+        &copy; Warnet Ducati Game Center 2013
+
+    %script{:type => "text/javascript", :src => "/js/jquery-1.9.1.min.js"}
+    %script{:type => "text/javascript", :src => "/bootstrap/js/bootstrap.min.js"}

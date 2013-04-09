@@ -1,0 +1,34 @@
+/ -if @albums.length == 0
+/   .alert.alert-info
+/     %strong No Albums Found
+/     %p No folder(s) found under <code>public/galleries</code> directory.
+/     %p
+/       Follow these steps to create photo gallery:
+/       %ol
+/         %li cd photo-gallery/public
+/         %li mkdir galleries
+/         %li cd galleries
+/         %li mkdir folder1
+/         %li cd folder1
+/         %li populate *.jpg file(s) here
+/         %li add info.yaml
+
+/     %p
+/       Sample content of <code>info.yaml</code>
+/       %pre
+/         = preserve do
+/           :escaped
+/             ---
+/             title: Album Title
+/             desc: Add description here
+
+
+/ /
+/   Wookmark Thumbnails
+/ #container
+/   #main{:role => "main"}
+/     %ul{:id => "tiles"}
+/       -@albums.each do |album|
+/         %li
+/           %a{:href => "album/#{album[:album]}"}
+/             %img{:src => "galleries/#{album[:album]}/#{album[:cover_photo]}"}
