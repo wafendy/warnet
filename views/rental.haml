@@ -1,0 +1,16 @@
+.row
+  .span6
+    %table.table.table-striped.table-bordered.table-condensed
+      %thead
+        %tr
+          %th Date
+          %th Acct Id
+          %th Acct Name
+          %th Jumlah
+      %tbody
+        -@account_details.each do |account|
+          %tr
+            %td #{account[0]}
+            %td #{account[1]}
+            %td #{account[2]}
+            %td #{account[3]}

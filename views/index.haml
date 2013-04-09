@@ -1,34 +1,71 @@
-/ -if @albums.length == 0
-/   .alert.alert-info
-/     %strong No Albums Found
-/     %p No folder(s) found under <code>public/galleries</code> directory.
-/     %p
-/       Follow these steps to create photo gallery:
-/       %ol
-/         %li cd photo-gallery/public
-/         %li mkdir galleries
-/         %li cd galleries
-/         %li mkdir folder1
-/         %li cd folder1
-/         %li populate *.jpg file(s) here
-/         %li add info.yaml
+.row
+  .span8
+    %ul.box
+      %li
+        .title Online
+        %h1 #{@total_online}
+      %li
+        .title Audit Date
+        %h4 #{@audit_info['audit_date']}
 
-/     %p
-/       Sample content of <code>info.yaml</code>
-/       %pre
-/         = preserve do
-/           :escaped
-/             ---
-/             title: Album Title
-/             desc: Add description here
+      %li
+        .title Last Audit
+        %h4 #{@audit_info['last_audit']}
+
+      %li
+        .title Audit Found
+        %h4 #{@audit_info['audit_found']} 
+    %ul.smallbox
+      -@pcstatus.each_pair do |k, v| 
+        -if v == 1
+          %li.online #{k}
+        -if v == 0
+          %li.offline #{k}
+
+.row
+  .span12
+    %ul.longbox
+      %li
+        %br
+        .title Total
+      %li
+        .title Hari Ini
+        %h4 #{currency(@total_income_today)}
+      %li
+        .title Kemaren
+        %h4 #{currency(@total_income_yesterday)}
 
 
-/ /
-/   Wookmark Thumbnails
-/ #container
-/   #main{:role => "main"}
-/     %ul{:id => "tiles"}
-/       -@albums.each do |album|
-/         %li
-/           %a{:href => "album/#{album[:album]}"}
-/             %img{:src => "galleries/#{album[:album]}/#{album[:cover_photo]}"}
+
+.row
+  .span12
+    %ul.longbox
+      %li
+        %br
+        .title Rental
+      %li
+        .title Hari Ini
+        %h4 #{currency(@total_rental_today)}
+      %li
+        .title Kemaren
+        %h4 #{currency(@total_rental_yesterday)}
+
+.row
+  .span12
+    %ul.longbox
+      %li
+        %br
+        .title Akun
+      %li
+        .title Hari Ini
+        %h4 #{currency(@total_account_today)}
+      %li
+        .title Kemaren
+        %h4 #{currency(@total_account_yesterday)}
+
+
+
+
+
+
+            

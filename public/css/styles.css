@@ -2,6 +2,13 @@ body {
   padding-top: 60px;
 }
 
+.title {
+  padding-top: 10px;
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  line-height: 18px;
+}
 
 .footer {
   height: 60px;
